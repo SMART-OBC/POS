@@ -6,7 +6,7 @@ odoo.define('pos_Coupons.CouponButton', function (require) {
    const Registries = require('point_of_sale.Registries');
    const ProductItem = require('point_of_sale.ProductItem');
    const ProductScreen = require('point_of_sale.ProductScreen');
-   var pos_model = require('point_of_sale.models');
+   const pos_model = require('point_of_sale.models');
    pos_model.load_fields("product.product",["product_popup"]); //load standard_price field in js
 
 class CouponButton extends PosComponent{
@@ -20,11 +20,12 @@ class CouponButton extends PosComponent{
           });
       }
   }
+  CouponButton.template = 'CouponButton';
   //Add coupon button and set visibility
       ProductScreen.addControlButton({
       component: CouponButton,
       condition: function() {
-          return this.env.pos.config.coupon_category;
+          return this.env.pos.config.use_coupon_programs;
       },
   });
   Registries.Component.add(CouponButton);

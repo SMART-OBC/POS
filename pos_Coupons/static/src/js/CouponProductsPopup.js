@@ -6,7 +6,7 @@ odoo.define('pos_Coupons.CouponProductsPopup', function(require) {
    const ControlButtonsMixin = require('point_of_sale.ControlButtonsMixin');
    const NumberBuffer = require('point_of_sale.NumberBuffer');
    const { useListener } = require('web.custom_hooks');
-   var pos_model = require('point_of_sale.models');
+   const pos_model = require('point_of_sale.models');
    pos_model.load_fields("product.product",["product_popup"]); //load standard_price field in js
    const { onChangeOrder, useBarcodeReader } = require('point_of_sale.custom_hooks');
    const { useState } = owl.hooks;

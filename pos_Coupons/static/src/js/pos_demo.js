@@ -2,12 +2,12 @@
 odoo.define('pos_Coupons.custom',function (require) {
 "use strict";
 
-var screens = require('point_of_sale.models');
-var rpc = require('web.rpc');
+const screens = require('point_of_sale.models');
+const rpc = require('web.rpc');
 const Registries = require('point_of_sale.Registries');
 //Modifying the POS screen UI
-var pos_model = require('point_of_sale.models');
-var CouponProductsPopup = require('pos_Coupons.CouponProductsPopup');
+const pos_model = require('point_of_sale.models');
+const CouponProductsPopup = require('pos_Coupons.CouponProductsPopup');
 //pos_model.load_fields("product.product",["qty_available","show_qty_on_hand","show_neg","can_still_sold_neg"]); //load standard_price field in js
 pos_model.load_fields("res.company",["product_popup","name"]);
 //making business logic
